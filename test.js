@@ -1,10 +1,10 @@
-const RavencoinRPC = require("./dist/index.cjs");
+const AidpcoinRPC = require("./dist/index.cjs");
 
 test("3rd party service getblockcount", async () => {
-  const rpc = RavencoinRPC.getRPC(
+  const rpc = AidpcoinRPC.getRPC(
     "anon",
     "anon",
-    "https://rvn-rpc-mainnet.ting.finance/rpc"
+    "http://127.0.0.1:18001"
   );
   let count = 0;
   try {
@@ -16,10 +16,10 @@ test("3rd party service getblockcount", async () => {
 });
 
 test("3rd party service incorrect method", async () => {
-  const rpc = RavencoinRPC.getRPC(
+  const rpc = AidpcoinRPC.getRPC(
     "anon",
     "anon",
-    "https://rvn-rpc-mainnet.ting.finance/rpc"
+    "http://127.0.0.1:18001"
   );
   const method = "getblockcountWRONG";
   const params = [];
@@ -39,10 +39,10 @@ test("3rd party service incorrect method", async () => {
 });
 
 test("Non existing 3rd party service getblockcount", async () => {
-  const rpc = RavencoinRPC.getRPC(
+  const rpc = AidpcoinRPC.getRPC(
     "anon",
     "anon",
-    "https://rvn-rpc-mainnet.WRONG.ting.finance/rpc"
+    "https://aidp-rpc-mainnet.WRONG.ting.finance/rpc"
   );
 
   let error = null;
