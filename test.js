@@ -4,7 +4,7 @@ test("3rd party service getblockcount", async () => {
   const rpc = AidpcoinRPC.getRPC(
     "anon",
     "anon",
-    "http://127.0.0.1:18001"
+    "https://aidp-rpc-mainnet.ai-depin.org/rpc"
   );
   let count = 0;
   try {
@@ -19,7 +19,7 @@ test("3rd party service incorrect method", async () => {
   const rpc = AidpcoinRPC.getRPC(
     "anon",
     "anon",
-    "http://127.0.0.1:18001"
+    "https://aidp-rpc-mainnet.ai-depin.org/rpc"
   );
   const method = "getblockcountWRONG";
   const params = [];
@@ -42,7 +42,7 @@ test("Non existing 3rd party service getblockcount", async () => {
   const rpc = AidpcoinRPC.getRPC(
     "anon",
     "anon",
-    "https://aidp-rpc-mainnet.WRONG.ting.finance/rpc"
+    "https://aidp-rpc-mainnet.WRONG.ai-depin.org/rpc"
   );
 
   let error = null;
